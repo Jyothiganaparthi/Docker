@@ -4,7 +4,7 @@ pipeline {
     environment {
         // set environment variables as needed
         AWS_ACCOUNT_ID=”678330281393”
-        AWS_DEFAULT_REGION=”us-east-1”
+        AWS_DEFAULT_REGION=”ap-northeast-1”
         IMAGE_REPO_NAME=”repo1”
         IMAGE_TAG=”lates
         REPOSITORY_URI = “public.ecr.aws/o0a3t4h3/repo1”
