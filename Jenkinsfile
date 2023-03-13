@@ -3,14 +3,18 @@ pipeline {
     
     environment {
         // set environment variables as needed
-        DOCKER_REGISTRY = "public.ecr.aws/o0a3t4h3/repo1"
-        DOCKER_REPO = "repo1"
-        DOCKER_TAG = "${env.BUILD_NUMBER}"
-    }
+        AWS_ACCOUNT_ID=”678330281393”
+        AWS_DEFAULT_REGION=”us-east-1”
+        IMAGE_REPO_NAME=”repo1”
+        IMAGE_TAG=”lates
+        REPOSITORY_URI = “public.ecr.aws/o0a3t4h3/repo1”
+}
+    
  stages{
   stage{
- withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
-    sh 'docker login -u AWS -p (aws ecr-public get-login-password --region us-east-1) public.ecr.aws/o0a3t4h3'
+      script{
+     sh "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/o0a3t4h3/repo1"
+    
 }
 }
  }
