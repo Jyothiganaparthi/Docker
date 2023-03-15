@@ -18,6 +18,11 @@ sh “aws ecr get-login-password — region ${AWS_DEFAULT_REGION} | docker login
 }
 }
 }
+    stage(‘Cloning Git’) {
+steps {
+ checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/Jyothiganaparthi/Docker.git']])
+}
+}
 }
     
         
