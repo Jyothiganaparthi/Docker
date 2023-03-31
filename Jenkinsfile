@@ -15,8 +15,8 @@ pipeline {
     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
 ]]) {
     sh 'aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 678330281393.dkr.ecr.ap-northeast-1.amazonaws.com'
-                    sh 'docker tag image1:latest 678330281393.dkr.ecr.ap-northeast-1.amazonaws.com/image1:latest'
-                    sh 'docker push 678330281393.dkr.ecr.ap-northeast-1.amazonaws.com/image1:latest'
+                    sh 'docker tag image1:latest 678330281393.dkr.ecr.ap-northeast-1.amazonaws.com/repo1:latest'
+                    sh 'docker push 678330281393.dkr.ecr.ap-northeast-1.amazonaws.com/repo1:latest'
 }
    }
         }
